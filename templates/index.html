@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF to Speech Translator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>PDF to Speech Translator</h1>
+            <p>Convert your PDFs to audio in any language with ease.</p>
+        </div>
+    </header>
+
+    <section class="feature-section">
+        <h2>Our Features</h2>
+        <div class="features">
+            <div class="feature-card">
+                <h3>Upload PDF</h3>
+                <p>Easily upload your PDF document to start the translation process.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Select Language</h3>
+                <p>Choose from a wide range of supported languages for translation.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Listen and Download</h3>
+                <p>Listen to the translated audio or download it for offline use.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="upload-section">
+        <div class="container">
+            <div class="card">
+                <form action="/" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="pdf-upload" class="upload-label">Upload PDF</label>
+                        <input id="pdf-upload" type="file" name="pdf" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="language">Select Language:</label>
+                        <select name="language" id="language" required>
+                            {% for code, name in languages.items() %}
+                            <option value="{{ code }}">{{ name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Translate" class="btn">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 PDF to Speech Translator. All Rights Reserved.</p>
+        <p>Contact us at <a href="mailto:support@pdftranslator.com">support@pdftranslator.com</a></p>
+    </footer>
+</body>
+</html>

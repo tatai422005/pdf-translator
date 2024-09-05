@@ -1,0 +1,249 @@
+/* General styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    width: 100%;
+    background-color: #0073e6;
+    padding: 40px 20px;
+    text-align: center;
+    color: white;
+}
+
+.header-content h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.header-content p {
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+/* Feature Section */
+.feature-section {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.feature-section h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #0073e6;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: left;
+}
+
+.feature-card h3 {
+    color: #0073e6;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    font-size: 1em;
+}
+
+/* Upload Section */
+.upload-section {
+    padding: 40px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.upload-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #0073e6;
+}
+
+input[type="file"] {
+    padding: 10px;
+    border: 2px dashed #0073e6;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+input[type="file"]:hover {
+    border-color: #005bb5;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+    color: #0073e6;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s;
+}
+
+select:focus {
+    border-color: #0073e6;
+}
+
+/* Loading Spinner */
+#loading {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    border: 8px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 8px solid #0073e6;
+    border-bottom: 8px solid #0073e6;
+    width: 80px;
+    height: 80px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Output Section */
+.result-section {
+    padding: 40px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.output-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.output-container h2 {
+    color: #0073e6;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.text-audio-block {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.text-audio-block p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+audio {
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Button styles */
+input[type="submit"], .btn {
+    background-color: #0073e6;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    text-align: center;
+    display: block;
+    width: 100%;
+    text-decoration: none;
+}
+
+input[type="submit"]:hover, .btn:hover {
+    background-color: #005bb5;
+    box-shadow: 0 4px 10px rgba(0, 115, 230, 0.4);
+}
+
+/* Footer styles */
+footer {
+    width: 100%;
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    margin-top: auto;
+}
+
+footer a {
+    color: #0073e6;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .features {
+        flex-direction: column;
+    }
+    
+    .output-container {
+        padding: 20px;
+    }
+}

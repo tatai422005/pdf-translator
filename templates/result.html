@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translation Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        let currentAudio = null;
+
+        function playAudio(audioElement) {
+            if (currentAudio && currentAudio !== audioElement) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+            }
+            currentAudio = audioElement;
+            audioElement.play();
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Translation Result</h1>
+            <p>Your document has been successfully translated and converted to audio.</p>
+        </div>
+    </header>
+
+    <section class="result-section">
+        <div class="output-container">
+            <div class="text-section">
+                <h2>Original Text</h2>
+                <div class="text-audio-block">
+                    <p>{{ original_text }}</p>
+                </div>
+            </div>
+
+            <div class="text-section">
+                <h2>Translated Text ({{ selected_language_name }})</h2>
+                <div class="text-audio-block">
+                    <p>{{ translated_text }}</p>
+                </div>
+            </div>
+
+            <div class="audio-section">
+                <h2>Original PDF Voice</h2>
+                <div class="text-audio-block">
+                    <audio controls onclick="playAudio(this)">
+                        <source src="{{ original_voice_url }}" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+
+            <div class="audio-section">
+                <h2>Translated Voice</h2>
+                <div class="text-audio-block">
+                    <audio controls onclick="playAudio(this)">
+                        <source src="{{ translated_voice_url }}" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+
+            <a href="/" class="btn">Translate Another PDF</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 PDF to Speech Translator. All Rights Reserved.</p>
+        <p>Contact us at <a href="mailto:support@pdftranslator.com">support@pdftranslator.com</a></p>
+    </footer>
+</body>
+</html>
