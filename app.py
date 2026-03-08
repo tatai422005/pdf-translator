@@ -7,6 +7,7 @@ import os
 import time
 
 from httpcore._exceptions import ReadTimeout
+
 app = Flask(__name__, template_folder="templates")
 
 def extract_text_from_pdf(pdf_path):
@@ -89,4 +90,5 @@ if __name__ == "__main__":
     os.makedirs("static", exist_ok=True)
 
     app.run(debug=True)
+
 
